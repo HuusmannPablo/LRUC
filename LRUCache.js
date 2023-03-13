@@ -33,8 +33,14 @@ class LRUCache {
         //  at capacity ? => remove last node of hashmap and linked list, and decrement size.
         // not at capacity ? => add to the linked list, save to hashmap 
         if(this.capacity===this.size){
-    
+            const lastNode = this.list.removeLast();
+            delete this.map[lastNode.key];
+            this.size -= 1;
         } 
+        const newNode = new ListNode(key, value);
+        this.list.add(newNode);
+        this.map[key] = newNode;
+        this.size += 1;
     }
 }
 
@@ -78,6 +84,9 @@ class DoublyLinkedList{
 
     removeLast(){
         // select the last node, delete it and return it
+        const lastNode = this.tail.prev;
+        this.delete(lastNode)
+        return lastNode
     }
 
 }
@@ -114,9 +123,9 @@ console.log(get4);
 let get5 = cache.get(4);
 console.log(get5);
 
-// cache.delete(3);
+cache.delete(3);
 
 let get6 = cache.get(3);
 console.log(get6);
 
-// cache.delete(1)
+cache.delete(1)
