@@ -2,3 +2,15 @@
 Least Recently Used Cache
 This repo was created to design and implement a data structure for Least Recently Used (LRU) cache.
 It should suppert Get, Put and Delete operations, and I can't spend more than two hours working on it.
+
+Solution to the problem found in:
+https://leetcode.com/problems/lru-cache/description/
+
+Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+
+Implement the LRUCache class:
+
+LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
+int get(int key) Return the value of the key if the key exists, otherwise return -1.
+void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.
+The functions get and put must each run in O(1) average time complexity.
